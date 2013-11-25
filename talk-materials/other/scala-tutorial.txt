@@ -1,0 +1,127 @@
+Console Hands-on:
+	cd cd ~/servers/scala/scala-2.10.0/bin/
+	./scala
+	//import java.util._, create ArrayList & add a few values, easy summing
+
+	cd ~/temp
+	nano HelloScala.scala
+	~/servers/scala/scala-2.10.0/bin/scalac HelloScala.scala
+	~/servers/scala/scala-2.10.0/bin/scala HelloScala.scala
+	java -cp ~/servers/scala/scala-2.10.0/lib/scala-library.jar:. HelloScala
+
+Basic objects:
+	- Empty class Rational(x: Int, y: Int)
+	- override toString - like in Java
+	- try to write the scala way
+	- introduce String.format - Java
+	- String.format - Scala
+
+	- preconditions: require(y != 0, "xxx")
+	- test it
+	- use try-catch
+
+	- auxiliary constructors
+
+	- private fields methods
+
+	- add method - Java way
+	- need to add val!
+	- add method - Scala way
+	- explain that no dots are needed
+
+	- implicit conversions
+	- first try to sum a double + rational
+	- then write implicit def rationalToDouble
+	- need to add toDouble to divide two integers
+
+Control structures:
+	
+	- every structure returns a value
+	- show if, for (only i, yield i)
+	- EXPLAIN var & val
+
+	- for expressions
+	- 1 to 10, 1 until 10
+	- zipWithIndex - one value, tuple
+	- zip other list
+	- nested loops
+	- nested iteration with filter
+
+	- while the same as Java
+	- NO BREAKS and CONTINUEs
+	- import scala.util.control.Breaks._
+
+Functions and closures:
+	
+	- functions are first-class
+	- functions are objects
+	- create function sqr
+	- create sqr1 with new Function[Int, Int] with apply
+	- create sqr2 as anonymous function
+	- create sqr3 as { class AnonFun extends ... new AnonFun}
+
+
+	- default parameter values
+	- fun, a+b
+	- b = 10
+
+	- partially applied functions
+	- val fun1 = fun(30, _: Int)
+
+	- higher order functions
+	- sumInts, sumCubes
+	- sum, taking f: Int => Int as a parameter
+	- function cube = x*x*x
+	- function sumCubes1 = sum(cube, a, b)
+	- function sumInts1 = sum((x: Int)=>x, a, b)
+	
+	- currying - multiple argument lists
+	- function sum1(f: Int => Int)(a: Int, b: Int)
+	- sumCubes2 = sum1(cube) _
+	- sumInts2 = sum1((x: Int)=>x) _
+
+Classes, part 2
+	
+	- write trait Philosophical, function philosophise
+	- write abstract class Animal with undefined makeSound
+
+	- linearization 
+	- add method philosophise to Animal
+	- add with Philosophical to Frog -> error
+	- override philosophical -> see linearization
+	- if we want to call super Animal, we use super[Animal].philosophical
+
+	- show logging
+
+	- case classes
+	- create class cat, run and see toString
+	- add cases to Cat, Frog
+	- redefined toString, constructor
+	- add String name to Animal constructor, parameter n, value name
+
+	- pattern matching
+	- must be c.asInstanceOf[Animal], match cases Cat("Muc"), Frog(n), _
+
+Collections
+	
+	- immutable
+	- show Array, List, Set, Map(KR, LJ)
+	- show Option class on Map
+	- functions sliding, foldLeft, foldRight,
+	dropWhile, filter, flatten, map, max, min, last, first, foreach,
+	intersect, union
+	- mkString
+
+	- mutable
+	- alternative to ArrayList is ArrayBuffer
+	- instantiate both
+	- import JavaConversions
+	- try sortWith
+
+	- one liner: read from file, filter comments, split by ;,
+	filter _(0) > 10, map _(2), sum
+
+XML
+	
+	- xml example
+	
