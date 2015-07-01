@@ -22,4 +22,4 @@ How to use the data
         presentation/*.pdf - Presentation in PDF format
     src/main/java/*.sc - Scala worksheets to show examples (during the talk create a new worksheet and work hands-on)
 
-    test change 2
+    test change 3
